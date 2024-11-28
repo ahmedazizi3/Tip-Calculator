@@ -8,7 +8,9 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Modifier
@@ -31,6 +33,7 @@ fun InputField(
     keyboardActions: KeyboardActions = KeyboardActions.Default,
     calculateTip: () -> Unit = {}
 ) {
+    val myPink: Color = Color(0xFFDE7CD1)
 
     OutlinedTextField(
         value = valueState.value,
@@ -41,7 +44,7 @@ fun InputField(
         label = {
             Text(
                 text = labelId,
-                color = Color(0xFFDE7CD1)
+                color = myPink
             )
         },
         modifier = modifier,
@@ -49,7 +52,7 @@ fun InputField(
             Icon(
                 imageVector = Icons.Default.Star,
                 contentDescription = "Dollar",
-                tint = Color(0xFFDE7CD1)
+                tint = myPink
             )
         },
         singleLine = isSingleLine,
@@ -62,6 +65,22 @@ fun InputField(
             keyboardType = keyboardType,
             imeAction = imeAction,
         ),
-        keyboardActions = keyboardActions
+        keyboardActions = keyboardActions,
+        colors = OutlinedTextFieldDefaults.colors(
+            focusedContainerColor = Color.White,
+            unfocusedContainerColor = Color.White,
+            disabledContainerColor = Color.White,
+            focusedBorderColor = Color.Transparent,
+            unfocusedBorderColor = Color.Transparent,
+            disabledBorderColor = Color.Transparent,
+            focusedLeadingIconColor = myPink,
+            unfocusedLeadingIconColor = myPink,
+            disabledLeadingIconColor = myPink,
+            focusedTextColor = myPink,
+            unfocusedTextColor = myPink,
+            disabledTextColor = myPink,
+            cursorColor = myPink
+        ),
+
     )
 }
