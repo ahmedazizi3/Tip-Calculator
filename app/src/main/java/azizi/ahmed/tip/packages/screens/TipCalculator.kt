@@ -1,4 +1,4 @@
-package azizi.ahmed.tip.screens
+package azizi.ahmed.tip.packages.screens
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -146,7 +146,6 @@ fun TipCalculator(
         }
 
         Spacer(modifier = Modifier.height(16.dp))
-//
 
         Surface(
             modifier = Modifier
